@@ -1,0 +1,1351 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+
+
+
+<title>NVD - NVD Dashboard</title>
+
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<meta http-equiv="content-style-type" content="text/css" />
+<meta http-equiv="content-script-type" content="text/javascript" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+
+<link href="/site-scripts/font-awesome/css/font-awesome.min.css"
+	type="text/css" rel="stylesheet" />
+<link href="/site-media/bootstrap/css/bootstrap.min.css"
+	type="text/css" rel="stylesheet" />
+<link href="/site-media/bootstrap/css/bootstrap-theme.min.css"
+	type="text/css" rel="stylesheet" />
+<link
+	href="/site-scripts/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css"
+	type="text/css" rel="stylesheet" />
+
+
+<link href="/site-media/css/nist-fonts.css" type="text/css"
+	rel="stylesheet" />
+<link href="/site-media/css/base-style.css" type="text/css"
+	rel="stylesheet" />
+<link href="/site-media/css/media-resize.css" type="text/css"
+	rel="stylesheet" />
+
+
+<meta name="theme-color" content="#000000">
+
+
+<script src="/site-scripts/jquery/dist/jquery.min.js"
+	type="text/javascript"></script>
+<script src="/site-scripts/jquery-visible/jquery.visible.min.js"
+	type="text/javascript"></script>
+<script src="/site-scripts/underscore/underscore-min.js"
+	type="text/javascript"></script>
+<script src="/site-media/bootstrap/js/bootstrap.js"
+	type="text/javascript"></script>
+<script src="/site-scripts/moment/min/moment.min.js"
+	type="text/javascript"></script>
+<script
+	src="/site-scripts/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js"
+	type="text/javascript"></script>
+
+
+<script src="/site-media/js/megamenu.js" type="text/javascript"></script>
+<script src="/site-media/js/nist-exit-script.js"
+	type="text/javascript"></script>
+<script src="/site-media/js/forms.js" type="text/javascript"></script>
+
+<script
+	src="/site-media/js/federated-analytics.all.min.js?agency=NIST&amp;subagency=nvd&amp;pua=UA-37115410-41&amp;yt=true"
+	type="text/javascript" id="_fed_an_js_tag"></script>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-4KKFZP12LQ"></script>
+<script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-4KKFZP12LQ'); </script>
+
+
+<style id="antiClickjack">
+body>* {
+	display: none !important;
+}
+
+#antiClickjack {
+	display: block !important;
+}
+</style>
+<noscript>
+	<style id="antiClickjackNoScript">
+body>* {
+	display: block !important;
+}
+
+#antiClickjack {
+	display: none !important;
+}
+</style>
+</noscript>
+<script type="text/javascript" id="antiClickjackScript">
+	if (self === top) {
+		// no clickjacking
+		var antiClickjack = document.getElementById("antiClickjack");
+		antiClickjack.parentNode.removeChild(antiClickjack);
+	} else {
+		setTimeout(tryForward(), 5000);
+	}
+
+	function tryForward() {
+		top.location = self.location;
+	}
+</script>
+<meta charset="UTF-8">
+
+<link href="/site-media/css/nvd-style.css" type="text/css"
+	rel="stylesheet" />
+<link href="/site-media/images/favicons/apple-touch-icon.png"
+	rel="apple-touch-icon" type="image/png" sizes="180x180" />
+<link href="/site-media/images/favicons/favicon-32x32.png"
+	rel="icon" type="image/png" sizes="32x32" />
+<link href="/site-media/images/favicons/favicon-16x16.png"
+	rel="icon" type="image/png" sizes="16x16" />
+<link href="/site-media/images/favicons/manifest.json"
+	rel="manifest" />
+<link href="/site-media/images/favicons/safari-pinned-tab.svg"
+	rel="mask-icon" color="#000000" />
+<link href="/site-media/images/favicons/favicon.ico"
+	rel="shortcut icon" />
+<meta name="msapplication-config" content="/site-media/images/favicons/browserconfig.xml" />
+<link href="/site-media/images/favicons/favicon.ico"
+	rel="shortcut icon" type="image/x-icon" />
+<link href="/site-media/images/favicons/favicon.ico" rel="icon"
+	type="image/x-icon" />
+<meta charset="UTF-8">
+
+</head>
+<body>
+	<header role="banner" title="Site Banner">
+		<div id="antiClickjack" style="display: none">
+			<h1>You are viewing this page in an unauthorized frame window.</h1>
+			<p>
+		This is a potential security issue, you are being redirected to
+		<a href="https://nvd.nist.gov">https://nvd.nist.gov</a>
+	</p>
+		</div>
+		<div>
+		<section class="usa-banner" aria-label="Official government website">
+		    <div class="usa-accordion container">
+		        <header class="usa-banner__header">
+		            <noscript>
+		                <p style="font-size: 0.85rem; font-weight: bold;">You have JavaScript disabled. This site requires JavaScript to be enabled for complete site functionality.</p>
+		            </noscript>
+		            <img class="usa-banner__header-flag"
+		            	src="/site-media/images/usbanner/us_flag_small.png" alt="U.S. flag">
+		            &nbsp;
+		            <span class="usa-banner__header-text">An official website of the United States government</span>
+
+		            <button id="gov-banner-button" class="usa-accordion__button usa-banner__button" data-toggle="collapse" data-target="#gov-banner" aria-expanded="false" aria-controls="gov-banner">
+		                <span class="usa-banner__button-text">Here's how you know</span>
+		            </button>
+		        </header>
+		        <div class="usa-banner__content usa-accordion__content collapse" role="tabpanel" id="gov-banner" aria-expanded="true">
+		            <div class="row">
+		                <div class="col-md-5 col-sm-12">
+		                    <div class="row">
+		                        <div class="col-sm-2 col-xs-3">
+		                            <img class="usa-banner__icon usa-media-block__img"
+		                            	src="/site-media/images/usbanner/icon-dot-gov.svg" alt="Dot gov">
+		                        </div>
+		                        <div class="col-sm-10 col-xs-9">
+		                            <p>
+		                                <strong>Official websites use .gov</strong>
+		                                <br>
+		                                A <strong>.gov</strong> website belongs to an official government organization in the United States.
+		                            </p>
+		                        </div>
+		                    </div>
+		                </div>
+		                <div class="col-md-5 col-sm-12">
+		                    <div class="row">
+		                        <div class="col-sm-2 col-xs-3">
+		                            <img class="usa-banner__icon usa-media-block__img"
+		                            	src="/site-media/images/usbanner/icon-https.svg" alt="Https">
+		                        </div>
+		                        <div class="col-sm-10 col-xs-9">
+		                        <p>
+		                            <strong>Secure .gov websites use HTTPS</strong>
+		                            <br>
+		                            A <strong>lock</strong> (<img class="usa-banner__lock"
+		                            	src="/site-media/images/usbanner/lock.svg" alt="Dot gov">) or <strong>https://</strong> means you've safely connected to the .gov website. Share sensitive information only on official, secure websites.
+		                        </p>
+		                        </div>
+		                    </div>
+		                </div>
+		            </div>
+		        </div>
+		    </div>
+		</section>
+	</div>
+		<div>
+		<div>
+	<nav id="navbar" class="navbar">
+		<div id="nist-menu-container" class="container">
+			<div class="row">
+				<!-- Brand -->
+				<div class="col-xs-6 col-md-4 navbar-header"
+					style="height:104px">
+					<a class="navbar-brand"
+						href="https://www.nist.gov"
+						target="_blank" rel="noopener noreferrer"
+						id="navbar-brand-image"
+						style="padding-top: 36px">
+
+						<img alt="National Institute of Standards and Technology"
+										src="/site-media/images/nist/nist-logo.svg"
+										width="110" height="30">
+					</a>
+				</div>
+				<div class="col-xs-6 col-md-8 navbar-nist-logo">
+					<span id="nvd-menu-button" class="pull-right" style="margin-top: 26px"> <a href="#">
+							<span class="fa fa-bars"></span> <span id="nvd-menu-full-text"><span
+								class="hidden-xxs">NVD </span>MENU</span>
+					</a>
+					</span>
+				</div>
+			</div>
+		</div>
+
+		<div class="main-menu-row container">
+			<!-- Collect the nav links, forms, and other content for toggling -->
+			<div id="main-menu-drop" class="col-lg-12" style="display: none;">
+				<ul>
+
+					<li><a href="/general"> General <span
+							class="expander fa fa-plus" id="nvd-header-menu-general"
+							data-expander-name="general" data-expanded="false"> <span
+								class="element-invisible">Expand or Collapse</span>
+						</span>
+					</a>
+						<div style="display: none;" class="sub-menu"
+							data-expander-trigger="general">
+							<div class="row">
+								<div class="col-lg-4">
+									<p>
+										<a href="/general/nvd-dashboard">NVD Dashboard</a>
+									</p>
+									<p>
+										<a href="https://www.nist.gov/itl/nvd">News and Status Updates</a>
+									</p>
+								</div>
+								<div class="col-lg-4">
+									<p>
+										<a href="/general/faq">FAQ</a>
+									</p>
+								</div>
+								<div class="col-lg-4">
+									<p>
+										<a href="/general/visualizations">Visualizations</a>
+									</p>
+									<p>
+										<a href="/general/legal-disclaimer">Legal Disclaimer</a>
+									</p>
+								</div>
+							</div>
+						</div></li>
+					<li><a href="/vuln"> Vulnerabilities <span
+							class="expander fa fa-plus"
+							id="nvd-header-menu-vulnerabilities"
+							data-expander-name="vulnerabilities" data-expanded="false">
+								<span class="element-invisible">Expand or Collapse</span>
+						</span>
+					</a>
+						<div style="display: none;" class="sub-menu"
+							data-expander-trigger="vulnerabilities">
+							<div class="row">
+								<div class="col-lg-4">
+									<p>
+										<a href="/vuln/search">Search &amp; Statistics</a>
+									</p>
+									<p>
+										<a href="/vuln/categories">Weakness Types</a>
+									</p>
+								</div>
+								<div class="col-lg-4">
+									<p>
+										<a href="/vuln/data-feeds">Legacy Data Feeds</a>
+									</p>
+									<p>
+										<a href="/vuln/vendor-comments">Vendor Comments</a>
+									</p>
+								</div>
+								<div class="col-lg-4">
+									<p>
+										<a href="/vuln/cvmap">CVMAP</a>
+									</p>
+								</div>
+							</div>
+						</div></li>
+					<li><a href="/vuln-metrics/cvss#"> Vulnerability Metrics <span
+							class="expander fa fa-plus" id="nvd-header-menu-metrics"
+							data-expander-name="metrics" data-expanded="false"> <span
+								class="element-invisible">Expand or Collapse</span>
+						</span>
+					</a>
+						<div style="display: none;" class="sub-menu"
+							data-expander-trigger="metrics">
+							<div class="row">
+								<div class="col-lg-4">
+									<p>
+										<a href="/vuln-metrics/cvss/v4-calculator">CVSS v4.0
+											Calculators</a>
+									</p>
+								</div>
+								<div class="col-lg-4">
+									<p>
+										<a href="/vuln-metrics/cvss/v3-calculator">CVSS v3.x
+											Calculators</a>
+									</p>
+								</div>
+								<div class="col-lg-4">
+									<p>
+										<a href="/vuln-metrics/cvss/v2-calculator">CVSS v2.0
+											Calculator</a>
+									</p>
+
+								</div>
+							</div>
+						</div></li>
+					<li><a href="/products"> Products <span
+							class="expander fa fa-plus" id="nvd-header-menu-products"
+							data-expander-name="products" data-expanded="false"> <span
+								class="element-invisible">Expand or Collapse</span>
+						</span>
+					</a>
+						<div style="display: none;" class="sub-menu"
+							data-expander-trigger="products">
+							<div class="row">
+								<div class="col-lg-4">
+									<p>
+										<a href="/products/cpe">CPE Dictionary</a>
+									</p>
+									<p>
+										<a href="/products/cpe/search">CPE Search</a>
+									</p>
+
+								</div>
+								<div class="col-lg-4">
+									<p>
+										<a href="/products/cpe/statistics">CPE Statistics</a>
+									</p>
+									<p>
+										<a href="/products/swid">SWID</a>
+									</p>
+
+								</div>
+								<div class="col-lg-4"></div>
+							</div>
+						</div></li>
+					<li>
+						<a href="/developers">Developers<span
+								class="expander fa fa-plus" id="nvd-header-menu-developers"
+								data-expander-name="developers" data-expanded="false"> <span
+									class="element-invisible">Expand or Collapse</span>
+							</span>
+						</a>
+						<div style="display: none;" class="sub-menu"
+							data-expander-trigger="developers">
+							<div class="row">
+								<div class="col-lg-4">
+									<p>
+										<a href="/developers/start-here">Start Here</a>
+									</p>
+									<p>
+										<a href="/developers/request-an-api-key">Request an API Key</a>
+									</p>
+
+								</div>
+								<div class="col-lg-4">
+									<p>
+										<a href="/developers/vulnerabilities">Vulnerabilities</a>
+									</p>
+									<p>
+										<a href="/developers/products">Products</a>
+									</p>
+
+								</div>
+								<div class="col-lg-4">
+									<p>
+										<a href="/developers/data-sources">Data Sources</a>
+									</p>
+									<p>
+										<a href="/developers/terms-of-use">Terms of Use</a>
+									</p>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li><a href="/contact"> Contact NVD </a></li>
+					<li><a href="/other"> Other Sites <span
+							class="expander fa fa-plus" id="nvd-header-menu-othersites"
+							data-expander-name="otherSites" data-expanded="false"> <span
+								class="element-invisible">Expand or Collapse</span>
+						</span>
+					</a>
+						<div style="display: none;" class="sub-menu"
+							data-expander-trigger="otherSites">
+							<div class="row">
+								<div class="col-lg-4">
+									<p>
+										<a href="https://ncp.nist.gov">Checklist (NCP) Repository</a>
+									</p>
+									<p>
+										<a href="https://ncp.nist.gov/cce">Configurations (CCE)</a>
+									</p>
+									<p>
+										<a href="https://csrc.nist.gov/Projects/risk-management/sp800-53-controls/release-search">800-53 Controls</a>
+									</p>
+								</div>
+								<div class="col-lg-4">
+									<p>
+										<a
+											href="https://csrc.nist.gov/projects/scap-validation-program">SCAP
+											Validated Tools</a>
+									</p>
+									<p>
+										<a
+											href="https://csrc.nist.gov/projects/security-content-automation-protocol">SCAP</a>
+									</p>
+								</div>
+								<div class="col-lg-4">
+									<p>
+										<a
+											href="https://csrc.nist.gov/projects/united-states-government-configuration-baseline">USGCB</a>
+									</p>
+								</div>
+							</div>
+						</div></li>
+
+					<li><a href="/search"> Search <span
+							class="expander fa fa-plus" id="nvd-header-menu-search"
+							data-expander-name="search" data-expanded="false"> <span
+								class="element-invisible">Expand or Collapse</span>
+						</span>
+					</a>
+						<div style="display: none;" class="sub-menu"
+							data-expander-trigger="search">
+							<div class="row">
+								<div class="col-lg-4">
+									<p>
+										<a href="/vuln/search">Vulnerability Search</a>
+									</p>
+								</div>
+								<div class="col-lg-4">
+									<p>
+										<a href="/products/cpe/search">CPE Search</a>
+									</p>
+								</div>
+							</div>
+						</div></li>
+
+
+
+
+				</ul>
+			</div>
+			<!-- /#mobile-nav-container -->
+		</div>
+
+	</nav>
+	<section id="itl-header" class="has-menu">
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-12 col-md-8">
+					<h2 class="hidden-xs hidden-sm">
+						<a href="https://www.nist.gov/itl" target="_blank" rel="noopener noreferrer">Information Technology Laboratory</a>
+					</h2>
+			 		<h1 class="hidden-xs hidden-sm">
+						<a id="nvd-header-link"
+						  href="/">National Vulnerability Database</a>
+					</h1>
+					<h1 class="hidden-xs text-center hidden-md hidden-lg"
+						>National Vulnerability Database</h1>
+					<h1 class="hidden-sm hidden-md hidden-lg text-center"
+						>NVD</h1>
+
+				</div>
+				<div class="col-sm-12 col-md-4">
+					<a style="width: 100%; text-align: center; display: block;padding-top: 14px">
+						<img id="img-logo-nvd-lg"
+							alt="National Vulnerability Database"
+							src="/site-media/images/F_NIST-Logo-NVD-white.svg"
+							width="500" height="100">
+					</a>
+				</div>
+			</div>
+		</div>
+	</section>
+
+
+</div>
+	</div>
+	</header>
+	<main>
+		<div>
+		<div id="body-section" class="container">
+
+			<div id="page-content" data-ng-app="nvdApp.dashboard">
+
+		<script type="text/javascript"
+		src="/site-media/js/angular/angular.min.js"></script>
+	<script type="text/javascript"
+		src="/site-media/js/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+	<script type="text/javascript"
+		src="/site-media/js/nvdApp/nvdApp.module.js"></script>
+ 	<script type="text/javascript"
+		src="/site-media/js/nvdApp/d3/d3.module.js"></script>
+	<script type="text/javascript"
+		src="/site-media/js/nvdApp/d3/d3.service.js"></script>
+	<script type="text/javascript"
+		src="/site-media/js/nvdApp/d3/d3.pieChart.directive.js"></script>
+	<script type="text/javascript"
+		src="/site-media/js/nvdApp/dashboard/dashboard.module.js"></script>
+	<script type="text/javascript"
+		src="/site-media/js/nvdApp/dashboard/dashboard.service.js"></script>
+ 	<script type="text/javascript"
+		src="/site-media/js/nvdApp/dashboard/dashboard.cveStatistics.controller.js"></script>
+	<script type="text/javascript"
+		src="/site-media/js/nvdApp/dashboard/dashboard.cvesInProc.controller.js"></script>
+	  <script type="text/javascript"
+		src="/site-media/js/nvdApp/dashboard/dashboard.cvssScoreSpread.controller.js"></script>
+
+
+		<h2>NVD Dashboard</h2>
+		<div class="row">
+			<div class="col-lg-7 col-md-12">
+ 				<div class="col-lg-12">
+					<h3>CVEs Received and Processed</h3>
+
+						<input type="hidden"
+						       id="InputRestBasePath"
+						       value="/rest/public/dashboard/statistics"
+						       name="InputRestBasePath">
+				       <input type="hidden"
+						       id="InputScriptsPath"
+						       value="/site-media/js/visualizations"
+						       name="InputScriptsPath">
+					<div data-ng-controller="cvesInProcController as vm">
+						<div class="row" ng-show="vm.loading">
+
+							<div class="col-lg-12 dash-overlay" style="height: 255px;">
+								<div>
+									<h3>CVEs Received and Processed</h3>
+									<h3>
+										<i class="fa fa-spinner fa-spin"></i> Please Wait
+									</h3>
+								</div>
+							</div>
+						</div>
+						<div id="divCvesReceivedAndProcessed"
+						     class="row" ng-hide="vm.loading" ng-cloak="ng-cloak">
+							<div class="col-lg-12">
+								<table class="table table-striped"
+								       id="tableCvesReceivedAndProcessed">
+									<thead>
+										<tr>
+											<th>Time Period</th>
+											<th>New CVEs Received by NVD</th>
+											<th>New CVEs Analyzed by NVD</th>
+											<th>Modified CVEs Received by NVD</th>
+											<th>Modified CVEs Re-analyzed by NVD</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<th nowrap="nowrap">Today</th>
+											<td ng-repeat="data in vm.countsData.TODAY">{{data.count}}</td>
+										</tr>
+										<tr>
+											<th nowrap="nowrap">This Week</th>
+											<td ng-repeat="data in vm.countsData.THIS_WEEK">{{data.count}}</td>
+										</tr>
+										<tr>
+											<th nowrap="nowrap">This Month</th>
+											<td ng-repeat="data in vm.countsData.THIS_MONTH">{{data.count}}</td>
+										</tr>
+										<tr>
+											<th nowrap="nowrap">Last Month</th>
+											<td ng-repeat="data in vm.countsData.LAST_MONTH">{{data.count}}</td>
+										</tr>
+										<tr>
+											<th nowrap="nowrap">This Year</th>
+											<td ng-repeat="data in vm.countsData.THIS_YEAR">{{data.count}}</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+
+				</div>
+				<div class="col-lg-6 col-md-12">
+					<div data-ng-controller="cveStatisticsController as vm">
+						<div class="row" ng-show="vm.loading">
+							<div class="col-lg-12 dash-overlay" style="height: 255px;">
+								<div>
+									<h3>CVE Status Count</h3>
+									<h3>
+										<i class="fa fa-spinner fa-spin"></i> Please Wait
+									</h3>
+								</div>
+							</div>
+						</div>
+						<div class="row" ng-hide="vm.loading" ng-cloak="ng-cloak"
+						     id="divCveStatusCount">
+							<div class="col-lg-12">
+								<h3>CVE Status Count</h3>
+								<table class="table table-striped"
+								       id="tableCveStatusCount">
+									<tbody>
+										<tr ng-repeat="data in vm.countsData | orderBy: 'order'"
+											uib-tooltip="{{data.description}}">
+											<td>{{data.name}}</td>
+											<td>{{data.count}}</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-6 col-md-12">
+
+
+
+					<div id="nvdCounts">
+
+						<h3>NVD Contains</h3>
+
+						<table class="table table-striped"
+						       id="tableNvdCounts">
+							<tbody>
+								<tr>
+									<td><a href="https://cve.org" target="_blank" rel="noopener noreferrer">CVE
+											Vulnerabilities</a></td>
+									<td>263086</td>
+								</tr>
+								<tr>
+									<td><a href="https://ncp.nist.gov">Checklists</a></td>
+									<td >797</td>
+								</tr>
+								<tr>
+									<td><a href="https://www.cisa.gov/uscert/ncas/alerts"
+										target="_blank" rel="noopener noreferrer">US-CERT Alerts</a></td>
+									<td>249</td>
+								</tr>
+								<tr>
+									<td><a href="https://www.kb.cert.org/vuls/byupdate/desc/"
+										target="_blank" rel="noopener noreferrer">US-CERT Vuln Notes</a></td>
+									<td >4486</td>
+								</tr>
+								<tr>
+									<td><a href="https://oval.mitre.org/" target="_blank" rel="noopener noreferrer">OVAL
+											Queries</a></td>
+									<td >10286</td>
+								</tr>
+								<tr>
+									<td><a href="/products/cpe">CPE Names</a></td>
+									<td >1302051</td>
+								</tr>
+							</tbody>
+						</table>
+
+
+					</div>
+
+				</div>
+			</div>
+			<div class="col-lg-5 col-md-12">
+
+<div data-ng-controller="cvssScoreSpreadController as vm">
+    <div class="row" ng-show="vm.loading">
+        <div class="col-lg-12 dash-overlay" style="height: 510px;">
+            <div>
+                <h3>CVSS Score Spread</h3>
+                <h3><i class="fa fa-spinner fa-spin"></i> Please Wait</h3>
+            </div>
+        </div>
+    </div>
+    <div class="row" ng-hide="vm.loading" ng-cloak="ng-cloak"
+         id="divCvssV3ScoreDist">
+        <h3>
+            CVSS V3 Score Distribution
+        </h3>
+        <div class="row">
+            <div class="col-lg-5">
+                <d3-pie-chart pie-data="vm.cvssV3PieData" pie-complete="vm.v3Complete" height="250" width="250" loading="vm.loading"></d3-pie-chart>
+            </div>
+            <div class="col-lg-7">
+                <table class="table table-striped"
+                       id="tableCvssV3ScoreDist">
+                    <thead>
+                        <tr>
+                            <th>Severity</th>
+                            <th>Number of Vulns</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="data in vm.cvssV3PieData | orderBy: 'order'">
+                            <td>
+                                <span class="label label-{{data.label}}">{{data.name}}</span>
+                            </td>
+                            <td>{{data.count}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <br />
+    <div class="row" ng-hide="vm.loading" ng-cloak="ng-cloak"
+         id="divCvssV2ScoreDist">
+        <h3>CVSS V2 Score Distribution</h3>
+        <div class="row">
+            <div class="col-md-5">
+                <d3-pie-chart pie-data="vm.cvssV2PieData" pie-complete="vm.v2Complete" height="250" width="250" loading="vm.loading"></d3-pie-chart>
+            </div>
+            <div class="col-lg-7">
+                <table class="table table-striped"
+                       id="tableCvssV2ScoreDist">
+                    <thead>
+                        <tr>
+                            <th>Severity</th>
+                            <th>Number of Vulns</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="data in vm.cvssV2PieData | orderBy: 'order'">
+                            <td>
+                                <span class="label label-{{data.label}}">{{data.name}}</span>
+                            </td>
+                            <td>{{data.count}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+			</div>
+
+		</div><br/> <br/>
+
+		<span>For information on how to the cite the NVD, including the
+			database's Digital Object Identifier (DOI), please consult <a href="https://data.nist.gov/od/id/1E0F15DAAEFB84E4E0531A5706813DD8436">
+			NIST's Public Data Repository</a>.</span>
+
+		<br/> <br/>
+
+			<div>
+		<div class="row">
+			<div class="col-md-12 col-sm-12">
+
+				<div id="vulnResultsPanel">
+
+					<!-- Results Panel -->
+					<div id="latestVulnsArea">
+
+						<div id="latestVulnsTitleRow" class="row">
+							<span class="hidden-md col-lg-9"> <strong class="h4Size">Last
+									20 Scored Vulnerability IDs &amp; Summaries</strong>
+							</span> <span class="hidden-md col-lg-3"> <strong class="h4Size">CVSS
+									Severity </strong>
+							</span>
+						</div>
+						<ul id="latestVulns">
+
+							<li>
+								<div class="col-lg-9">
+									<p>
+										<strong><a href="/vuln/detail/CVE-2024-5290"
+											id="cveDetailAnchor-0">CVE-2024-5290</a></strong>  - An issue was discovered in Ubuntu wpa_supplicant that resulted in loading of arbitrary shared objects, which allows a local unprivileged attacker to escalate privileges to the user that wpa_supplicant runs as (usually root).
+
+
+
+
+Membership in the ...
+
+										<a
+											href="/vuln/detail/CVE-2024-5290#vulnDescriptionTitle">read CVE-2024-5290</a><br> <strong>Published:</strong>
+										August 07, 2024; 5:16:05 AM -0400
+									</p>
+								</div>
+								<div class="col-lg-3">
+									<p id="severity-score-0">
+
+										<span id="cvss3-link-0"> <em>V3.1:</em> <a
+											href="/vuln-metrics/cvss/v3-calculator?name=CVE-2024-5290&amp;vector=AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H&amp;version=3.1&amp;source=NIST"
+											class="label label-danger" data-testid="vuln-cvss3-link-0" aria-label="V3 score for CVE-2024-5290">7.8 HIGH</a><br />
+										</span>
+									</p>
+								</div>
+							</li>
+
+							<li>
+								<div class="col-lg-9">
+									<p>
+										<strong><a href="/vuln/detail/CVE-2024-7143"
+											id="cveDetailAnchor-1">CVE-2024-7143</a></strong>  - A flaw was found in the Pulp package. When a role-based access control (RBAC) object in Pulp is set to assign permissions on its creation, it uses the `AutoAddObjPermsMixin` (typically the add_roles_for_object_creator method). This method finds th...
+
+										<a
+											href="/vuln/detail/CVE-2024-7143#vulnDescriptionTitle">read CVE-2024-7143</a><br> <strong>Published:</strong>
+										August 07, 2024; 1:15:52 PM -0400
+									</p>
+								</div>
+								<div class="col-lg-3">
+									<p id="severity-score-1">
+
+										<span id="cvss3-link-1"> <em>V3.1:</em> <a
+											href="/vuln-metrics/cvss/v3-calculator?name=CVE-2024-7143&amp;vector=AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:L&amp;version=3.1&amp;source=NIST"
+											class="label label-danger" data-testid="vuln-cvss3-link-1" aria-label="V3 score for CVE-2024-7143">8.3 HIGH</a><br />
+										</span>
+									</p>
+								</div>
+							</li>
+
+							<li>
+								<div class="col-lg-9">
+									<p>
+										<strong><a href="/vuln/detail/CVE-2024-42482"
+											id="cveDetailAnchor-2">CVE-2024-42482</a></strong>  - fish-shop/syntax-check is a GitHub action for syntax checking fish shell files. Improper neutralization of delimiters in the `pattern` input (specifically the command separator `;` and command substitution characters `(` and `)`) mean that arbitra...
+
+										<a
+											href="/vuln/detail/CVE-2024-42482#vulnDescriptionTitle">read CVE-2024-42482</a><br> <strong>Published:</strong>
+										August 12, 2024; 12:15:16 PM -0400
+									</p>
+								</div>
+								<div class="col-lg-3">
+									<p id="severity-score-2">
+
+										<span id="cvss3-link-2"> <em>V3.1:</em> <a
+											href="/vuln-metrics/cvss/v3-calculator?name=CVE-2024-42482&amp;vector=AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:N&amp;version=3.1&amp;source=NIST"
+											class="label label-warning" data-testid="vuln-cvss3-link-2" aria-label="V3 score for CVE-2024-42482">6.5 MEDIUM</a><br />
+										</span>
+									</p>
+								</div>
+							</li>
+
+							<li>
+								<div class="col-lg-9">
+									<p>
+										<strong><a href="/vuln/detail/CVE-2024-45835"
+											id="cveDetailAnchor-3">CVE-2024-45835</a></strong>  - Mattermost Desktop App versions &lt;=5.8.0 fail to sufficiently configure Electron Fuses which allows an attacker to gather Chromium cookies or abuse other misconfigurations via remote/local access.
+
+										<br> <strong>Published:</strong>
+										September 16, 2024; 11:15:16 AM -0400
+									</p>
+								</div>
+								<div class="col-lg-3">
+									<p id="severity-score-3">
+
+										<span id="cvss3-link-3"> <em>V3.1:</em> <a
+											href="/vuln-metrics/cvss/v3-calculator?name=CVE-2024-45835&amp;vector=AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:N&amp;version=3.1&amp;source=NIST"
+											class="label label-warning" data-testid="vuln-cvss3-link-3" aria-label="V3 score for CVE-2024-45835">6.5 MEDIUM</a><br />
+										</span>
+									</p>
+								</div>
+							</li>
+
+							<li>
+								<div class="col-lg-9">
+									<p>
+										<strong><a href="/vuln/detail/CVE-2024-0107"
+											id="cveDetailAnchor-4">CVE-2024-0107</a></strong>  - NVIDIA GPU Display Driver for Windows contains a vulnerability in the user mode layer, where an unprivileged regular user can cause an out-of-bounds read. A successful exploit of this vulnerability might lead to code execution, denial of service, ...
+
+										<a
+											href="/vuln/detail/CVE-2024-0107#vulnDescriptionTitle">read CVE-2024-0107</a><br> <strong>Published:</strong>
+										August 08, 2024; 1:15:18 PM -0400
+									</p>
+								</div>
+								<div class="col-lg-3">
+									<p id="severity-score-4">
+
+										<span id="cvss3-link-4"> <em>V3.1:</em> <a
+											href="/vuln-metrics/cvss/v3-calculator?name=CVE-2024-0107&amp;vector=AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H&amp;version=3.1&amp;source=NIST"
+											class="label label-danger" data-testid="vuln-cvss3-link-4" aria-label="V3 score for CVE-2024-0107">7.8 HIGH</a><br />
+										</span>
+									</p>
+								</div>
+							</li>
+
+							<li>
+								<div class="col-lg-9">
+									<p>
+										<strong><a href="/vuln/detail/CVE-2024-39772"
+											id="cveDetailAnchor-5">CVE-2024-39772</a></strong>  - Mattermost Desktop App versions &lt;=5.8.0 fail to safeguard screen capture functionality which allows an attacker to silently capture high-quality screenshots via JavaScript APIs.
+
+										<br> <strong>Published:</strong>
+										September 16, 2024; 11:15:16 AM -0400
+									</p>
+								</div>
+								<div class="col-lg-3">
+									<p id="severity-score-5">
+
+										<span id="cvss3-link-5"> <em>V3.1:</em> <a
+											href="/vuln-metrics/cvss/v3-calculator?name=CVE-2024-39772&amp;vector=AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N&amp;version=3.1&amp;source=NIST"
+											class="label label-warning" data-testid="vuln-cvss3-link-5" aria-label="V3 score for CVE-2024-39772">5.3 MEDIUM</a><br />
+										</span>
+									</p>
+								</div>
+							</li>
+
+							<li>
+								<div class="col-lg-9">
+									<p>
+										<strong><a href="/vuln/detail/CVE-2024-42033"
+											id="cveDetailAnchor-6">CVE-2024-42033</a></strong>  - Access control vulnerability in the security verification module
+mpact: Successful exploitation of this vulnerability will affect integrity and confidentiality.
+
+										<br> <strong>Published:</strong>
+										August 08, 2024; 6:15:06 AM -0400
+									</p>
+								</div>
+								<div class="col-lg-3">
+									<p id="severity-score-6">
+
+										<span id="cvss3-link-6"> <em>V3.1:</em> <a
+											href="/vuln-metrics/cvss/v3-calculator?name=CVE-2024-42033&amp;vector=AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:N&amp;version=3.1&amp;source=NIST"
+											class="label label-danger" data-testid="vuln-cvss3-link-6" aria-label="V3 score for CVE-2024-42033">7.1 HIGH</a><br />
+										</span>
+									</p>
+								</div>
+							</li>
+
+							<li>
+								<div class="col-lg-9">
+									<p>
+										<strong><a href="/vuln/detail/CVE-2024-46419"
+											id="cveDetailAnchor-7">CVE-2024-46419</a></strong>  - TOTOLINK AC1200 T8 v4.1.5cu.861_B20230220 has a buffer overflow vulnerability in the setWizardCfg function via the ssid5g parameter.
+
+										<br> <strong>Published:</strong>
+										September 16, 2024; 10:15:13 AM -0400
+									</p>
+								</div>
+								<div class="col-lg-3">
+									<p id="severity-score-7">
+
+										<span id="cvss3-link-7"> <em>V3.1:</em> <a
+											href="/vuln-metrics/cvss/v3-calculator?name=CVE-2024-46419&amp;vector=AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H&amp;version=3.1&amp;source=NIST"
+											class="label label-critical" data-testid="vuln-cvss3-link-7" aria-label="V3 score for CVE-2024-46419">9.8 CRITICAL</a><br />
+										</span>
+									</p>
+								</div>
+							</li>
+
+							<li>
+								<div class="col-lg-9">
+									<p>
+										<strong><a href="/vuln/detail/CVE-2024-46451"
+											id="cveDetailAnchor-8">CVE-2024-46451</a></strong>  - TOTOLINK AC1200 T8 v4.1.5cu.861_B20230220 has a buffer overflow vulnerability in the setWiFiAclRules function via the desc parameter.
+
+										<br> <strong>Published:</strong>
+										September 16, 2024; 9:15:10 AM -0400
+									</p>
+								</div>
+								<div class="col-lg-3">
+									<p id="severity-score-8">
+
+										<span id="cvss3-link-8"> <em>V3.1:</em> <a
+											href="/vuln-metrics/cvss/v3-calculator?name=CVE-2024-46451&amp;vector=AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H&amp;version=3.1&amp;source=NIST"
+											class="label label-critical" data-testid="vuln-cvss3-link-8" aria-label="V3 score for CVE-2024-46451">9.8 CRITICAL</a><br />
+										</span>
+									</p>
+								</div>
+							</li>
+
+							<li>
+								<div class="col-lg-9">
+									<p>
+										<strong><a href="/vuln/detail/CVE-2024-46424"
+											id="cveDetailAnchor-9">CVE-2024-46424</a></strong>  - TOTOLINK AC1200 T8 v4.1.5cu.861_B20230220 has a buffer overflow vulnerability in the UploadCustomModule function, which allows attackers to cause a Denial of Service (DoS) via the File parameter.
+
+										<br> <strong>Published:</strong>
+										September 16, 2024; 9:15:10 AM -0400
+									</p>
+								</div>
+								<div class="col-lg-3">
+									<p id="severity-score-9">
+
+										<span id="cvss3-link-9"> <em>V3.1:</em> <a
+											href="/vuln-metrics/cvss/v3-calculator?name=CVE-2024-46424&amp;vector=AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H&amp;version=3.1&amp;source=NIST"
+											class="label label-danger" data-testid="vuln-cvss3-link-9" aria-label="V3 score for CVE-2024-46424">7.5 HIGH</a><br />
+										</span>
+									</p>
+								</div>
+							</li>
+
+							<li>
+								<div class="col-lg-9">
+									<p>
+										<strong><a href="/vuln/detail/CVE-2024-44945"
+											id="cveDetailAnchor-10">CVE-2024-44945</a></strong>  - In the Linux kernel, the following vulnerability has been resolved:
+
+netfilter: nfnetlink: Initialise extack before use in ACKs
+
+Add missing extack initialisation when ACKing BATCH_BEGIN and BATCH_END.
+
+										<br> <strong>Published:</strong>
+										August 31, 2024; 3:15:03 AM -0400
+									</p>
+								</div>
+								<div class="col-lg-3">
+									<p id="severity-score-10">
+
+										<span id="cvss3-link-10"> <em>V3.1:</em> <a
+											href="/vuln-metrics/cvss/v3-calculator?name=CVE-2024-44945&amp;vector=AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H&amp;version=3.1&amp;source=NIST"
+											class="label label-danger" data-testid="vuln-cvss3-link-10" aria-label="V3 score for CVE-2024-44945">7.8 HIGH</a><br />
+										</span>
+									</p>
+								</div>
+							</li>
+
+							<li>
+								<div class="col-lg-9">
+									<p>
+										<strong><a href="/vuln/detail/CVE-2024-8779"
+											id="cveDetailAnchor-11">CVE-2024-8779</a></strong>  - OMFLOW from The SYSCOM Group does not properly restrict access to the system settings modification functionality, allowing remote attackers with regular privileges to update system settings or create accounts with administrator privileges, thereby...
+
+										<a
+											href="/vuln/detail/CVE-2024-8779#vulnDescriptionTitle">read CVE-2024-8779</a><br> <strong>Published:</strong>
+										September 16, 2024; 2:15:12 AM -0400
+									</p>
+								</div>
+								<div class="col-lg-3">
+									<p id="severity-score-11">
+
+										<span id="cvss3-link-11"> <em>V3.1:</em> <a
+											href="/vuln-metrics/cvss/v3-calculator?name=CVE-2024-8779&amp;vector=AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H&amp;version=3.1&amp;source=TWCERT/CC"
+											class="label label-danger" data-testid="vuln-cvss3-link-11" aria-label="V3 score for CVE-2024-8779">8.8 HIGH</a><br />
+										</span>
+									</p>
+								</div>
+							</li>
+
+							<li>
+								<div class="col-lg-9">
+									<p>
+										<strong><a href="/vuln/detail/CVE-2024-43461"
+											id="cveDetailAnchor-12">CVE-2024-43461</a></strong>  - Windows MSHTML Platform Spoofing Vulnerability
+
+										<br> <strong>Published:</strong>
+										September 10, 2024; 1:15:33 PM -0400
+									</p>
+								</div>
+								<div class="col-lg-3">
+									<p id="severity-score-12">
+
+										<span id="cvss3-link-12"> <em>V3.1:</em> <a
+											href="/vuln-metrics/cvss/v3-calculator?name=CVE-2024-43461&amp;vector=AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H&amp;version=3.1&amp;source=Microsoft%20Corporation"
+											class="label label-danger" data-testid="vuln-cvss3-link-12" aria-label="V3 score for CVE-2024-43461">8.8 HIGH</a><br />
+										</span>
+									</p>
+								</div>
+							</li>
+
+							<li>
+								<div class="col-lg-9">
+									<p>
+										<strong><a href="/vuln/detail/CVE-2024-8868"
+											id="cveDetailAnchor-13">CVE-2024-8868</a></strong>  - A vulnerability was found in code-projects Crud Operation System 1.0. It has been rated as critical. This issue affects some unknown processing of the file savedata.php. The manipulation of the argument sname leads to sql injection. The attack may...
+
+										<a
+											href="/vuln/detail/CVE-2024-8868#vulnDescriptionTitle">read CVE-2024-8868</a><br> <strong>Published:</strong>
+										September 14, 2024; 11:15:02 PM -0400
+									</p>
+								</div>
+								<div class="col-lg-3">
+									<p id="severity-score-13">
+
+										<span id="cvss3-link-13"> <em>V3.1:</em> <a
+											href="/vuln-metrics/cvss/v3-calculator?name=CVE-2024-8868&amp;vector=AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H&amp;version=3.1&amp;source=NIST"
+											class="label label-critical" data-testid="vuln-cvss3-link-13" aria-label="V3 score for CVE-2024-8868">9.8 CRITICAL</a><br />
+										</span>
+									</p>
+								</div>
+							</li>
+
+							<li>
+								<div class="col-lg-9">
+									<p>
+										<strong><a href="/vuln/detail/CVE-2024-8867"
+											id="cveDetailAnchor-14">CVE-2024-8867</a></strong>  - A vulnerability was found in Perfex CRM 3.1.6. It has been declared as problematic. This vulnerability affects unknown code of the file application/controllers/Clients.php of the component Parameter Handler. The manipulation of the argument messag...
+
+										<a
+											href="/vuln/detail/CVE-2024-8867#vulnDescriptionTitle">read CVE-2024-8867</a><br> <strong>Published:</strong>
+										September 14, 2024; 11:15:01 PM -0400
+									</p>
+								</div>
+								<div class="col-lg-3">
+									<p id="severity-score-14">
+
+										<span id="cvss3-link-14"> <em>V3.1:</em> <a
+											href="/vuln-metrics/cvss/v3-calculator?name=CVE-2024-8867&amp;vector=AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N&amp;version=3.1&amp;source=NIST"
+											class="label label-warning" data-testid="vuln-cvss3-link-14" aria-label="V3 score for CVE-2024-8867">5.4 MEDIUM</a><br />
+										</span>
+									</p>
+								</div>
+							</li>
+
+							<li>
+								<div class="col-lg-9">
+									<p>
+										<strong><a href="/vuln/detail/CVE-2024-8865"
+											id="cveDetailAnchor-15">CVE-2024-8865</a></strong>  - A vulnerability was found in composiohq composio up to 0.5.8 and classified as problematic. Affected by this issue is the function path of the file composio\server\api.py. The manipulation of the argument file leads to path traversal. The exploit ...
+
+										<a
+											href="/vuln/detail/CVE-2024-8865#vulnDescriptionTitle">read CVE-2024-8865</a><br> <strong>Published:</strong>
+										September 14, 2024; 9:15:10 PM -0400
+									</p>
+								</div>
+								<div class="col-lg-3">
+									<p id="severity-score-15">
+
+										<span id="cvss3-link-15"> <em>V3.1:</em> <a
+											href="/vuln-metrics/cvss/v3-calculator?name=CVE-2024-8865&amp;vector=AV:N/AC:L/PR:H/UI:N/S:U/C:H/I:N/A:N&amp;version=3.1&amp;source=NIST"
+											class="label label-warning" data-testid="vuln-cvss3-link-15" aria-label="V3 score for CVE-2024-8865">4.9 MEDIUM</a><br />
+										</span>
+									</p>
+								</div>
+							</li>
+
+							<li>
+								<div class="col-lg-9">
+									<p>
+										<strong><a href="/vuln/detail/CVE-2024-8864"
+											id="cveDetailAnchor-16">CVE-2024-8864</a></strong>  - A vulnerability has been found in composiohq composio up to 0.5.6 and classified as critical. Affected by this vulnerability is the function Calculator of the file python/composio/tools/local/mathematical/actions/calculator.py. The manipulation le...
+
+										<a
+											href="/vuln/detail/CVE-2024-8864#vulnDescriptionTitle">read CVE-2024-8864</a><br> <strong>Published:</strong>
+										September 14, 2024; 9:15:10 PM -0400
+									</p>
+								</div>
+								<div class="col-lg-3">
+									<p id="severity-score-16">
+
+										<span id="cvss3-link-16"> <em>V3.1:</em> <a
+											href="/vuln-metrics/cvss/v3-calculator?name=CVE-2024-8864&amp;vector=AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H&amp;version=3.1&amp;source=NIST"
+											class="label label-danger" data-testid="vuln-cvss3-link-16" aria-label="V3 score for CVE-2024-8864">8.8 HIGH</a><br />
+										</span>
+									</p>
+								</div>
+							</li>
+
+							<li>
+								<div class="col-lg-9">
+									<p>
+										<strong><a href="/vuln/detail/CVE-2024-42365"
+											id="cveDetailAnchor-17">CVE-2024-42365</a></strong>  - Asterisk is an open source private branch exchange (PBX) and telephony toolkit. Prior to asterisk versions 18.24.2, 20.9.2, and 21.4.2 and certified-asterisk versions 18.9-cert11 and 20.7-cert2, an AMI user with `write=originate` may change all co...
+
+										<a
+											href="/vuln/detail/CVE-2024-42365#vulnDescriptionTitle">read CVE-2024-42365</a><br> <strong>Published:</strong>
+										August 08, 2024; 1:15:19 PM -0400
+									</p>
+								</div>
+								<div class="col-lg-3">
+									<p id="severity-score-17">
+
+										<span id="cvss3-link-17"> <em>V3.1:</em> <a
+											href="/vuln-metrics/cvss/v3-calculator?name=CVE-2024-42365&amp;vector=AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H&amp;version=3.1&amp;source=NIST"
+											class="label label-danger" data-testid="vuln-cvss3-link-17" aria-label="V3 score for CVE-2024-42365">8.8 HIGH</a><br />
+										</span>
+									</p>
+								</div>
+							</li>
+
+							<li>
+								<div class="col-lg-9">
+									<p>
+										<strong><a href="/vuln/detail/CVE-2024-40766"
+											id="cveDetailAnchor-18">CVE-2024-40766</a></strong>  - An improper access control vulnerability has been identified in the SonicWall SonicOS management access, potentially leading to unauthorized resource access and in specific conditions, causing the firewall to crash. This issue affects SonicWall Fi...
+
+										<a
+											href="/vuln/detail/CVE-2024-40766#vulnDescriptionTitle">read CVE-2024-40766</a><br> <strong>Published:</strong>
+										August 23, 2024; 3:15:03 AM -0400
+									</p>
+								</div>
+								<div class="col-lg-3">
+									<p id="severity-score-18">
+
+										<span id="cvss3-link-18"> <em>V3.1:</em> <a
+											href="/vuln-metrics/cvss/v3-calculator?name=CVE-2024-40766&amp;vector=AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H&amp;version=3.1&amp;source=NIST"
+											class="label label-critical" data-testid="vuln-cvss3-link-18" aria-label="V3 score for CVE-2024-40766">9.8 CRITICAL</a><br />
+										</span>
+									</p>
+								</div>
+							</li>
+
+							<li>
+								<div class="col-lg-9">
+									<p>
+										<strong><a href="/vuln/detail/CVE-2024-29073"
+											id="cveDetailAnchor-19">CVE-2024-29073</a></strong>  - An vulnerability in the handling of Latex exists in Ankitects Anki 24.04. When Latex is sanitized to prevent unsafe commands, the verbatim package, which comes installed by default in many Latex distributions, has been overlooked. A specially craf...
+
+										<a
+											href="/vuln/detail/CVE-2024-29073#vulnDescriptionTitle">read CVE-2024-29073</a><br> <strong>Published:</strong>
+										July 22, 2024; 11:15:02 AM -0400
+									</p>
+								</div>
+								<div class="col-lg-3">
+									<p id="severity-score-19">
+
+										<span id="cvss3-link-19"> <em>V3.1:</em> <a
+											href="/vuln-metrics/cvss/v3-calculator?name=CVE-2024-29073&amp;vector=AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:N/A:N&amp;version=3.1&amp;source=NIST"
+											class="label label-warning" data-testid="vuln-cvss3-link-19" aria-label="V3 score for CVE-2024-29073">6.5 MEDIUM</a><br />
+										</span>
+									</p>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+
+
+
+
+
+
+	</div>
+		</div>
+	</div>
+	</main>
+	<footer id="footer" role="contentinfo">
+		<div class="container">
+
+			<div class="row">
+				<div class="col-sm-12">
+					<ul class="social-list pull-right">
+						<li class="field-item service-twitter list-horiz"><a
+							href="https://twitter.com/NISTCyber" target="_blank" rel="noopener noreferrer"
+							class="social-btn social-btn--large extlink ext"> <i
+								class="fa fa-twitter fa-fw"><span class="element-invisible">twitter</span></i><span
+								class="ext"><span class="element-invisible"> (link
+										is external)</span></span>
+						</a></li>
+						<li class="field-item service-facebook list-horiz"><a
+							href="https://www.facebook.com/NIST" target="_blank" rel="noopener noreferrer"
+							class="social-btn social-btn--large extlink ext"> <i
+								class="fa fa-facebook fa-fw"><span class="element-invisible">facebook</span></i><span
+								class="ext"><span class="element-invisible"> (link
+										is external)</span></span></a></li>
+						<li class="field-item service-linkedin list-horiz"><a
+							href="https://www.linkedin.com/company/nist" target="_blank" rel="noopener noreferrer"
+							class="social-btn social-btn--large extlink ext"> <i
+								class="fa fa-linkedin fa-fw"><span class="element-invisible">linkedin</span></i><span
+								class="ext"><span class="element-invisible"> (link
+										is external)</span></span></a></li>
+						<li class="field-item service-youtube list-horiz"><a
+							href="https://www.youtube.com/user/USNISTGOV" target="_blank" rel="noopener noreferrer"
+							class="social-btn social-btn--large extlink ext"> <i
+								class="fa fa-youtube fa-fw"><span class="element-invisible">youtube</span></i><span
+								class="ext"><span class="element-invisible"> (link
+										is external)</span></span></a></li>
+						<li class="field-item service-rss list-horiz"><a
+							href="https://www.nist.gov/news-events/nist-rss-feeds"
+							target="_blank" rel="noopener noreferrer" class="social-btn social-btn--large extlink">
+								<i class="fa fa-rss fa-fw"><span class="element-invisible">rss</span></i>
+						</a></li>
+						<li class="field-item service-govdelivery list-horiz last"><a
+							href="https://public.govdelivery.com/accounts/USNIST/subscriber/new?qsp=USNIST_3"
+							target="_blank" rel="noopener noreferrer" class="social-btn social-btn--large extlink ext">
+								<i class="fa fa-envelope fa-fw"><span
+									class="element-invisible">govdelivery</span></i><span class="ext"><span
+									class="element-invisible"> (link is external)</span></span>
+						</a></li>
+					</ul>
+					<span class="hidden-xs"> <a
+						title="National Institute of Standards and Technology" rel="home"
+						class="footer-nist-logo"> <img
+							src="/site-media/images/nist/nist-logo.png"
+							alt="National Institute of Standards and Technology logo" />
+					</a>
+					</span>
+				</div>
+			</div>
+			<div class="row hidden-sm hidden-md hidden-lg">
+				<div class="col-sm-12">
+					<a href="https://www.nist.gov"
+						title="National Institute of Standards and Technology" rel="home"
+						target="_blank" rel="noopener noreferrer" class="footer-nist-logo"> <img
+						src="/site-media/images/nist/nist-logo.png"
+						alt="National Institute of Standards and Technology logo" />
+					</a>
+				</div>
+			</div>
+
+			<div class="row footer-contact-container">
+				<div class="col-sm-6">
+					<strong>HEADQUARTERS</strong>
+					<br>
+					100 Bureau Drive
+					<br>
+					Gaithersburg, MD 20899
+					<br>
+					<a href="tel:301-975-2000">(301) 975-2000</a>
+					<br>
+					<br>
+					<a href="mailto:nvd@nist.gov">Webmaster</a> | <a
+						href="https://www.nist.gov/about-nist/contact-us">Contact Us</a>
+					| <a href="https://www.nist.gov/about-nist/visit"
+						style="display: inline-block;">Our Other Offices</a>
+				</div>
+				<div class="col-sm-6">
+					<div class="pull-right"
+						style="text-align:right">
+						<strong>Incident Response Assistance and Non-NVD Related<br>Technical Cyber Security Questions:</strong>
+						<br>
+						US-CERT Security Operations Center
+						<br> Email: <a href="mailto:soc@us-cert.gov">soc@us-cert.gov</a>
+						<br> Phone:	1-888-282-0870
+					</div>
+				</div>
+			</div>
+
+			<div class="row">
+			    <nav title="Footer Navigation" role="navigation"
+			    	 class="row footer-bottom-links-container">
+			    <!-- https://github.com/usnistgov/nist-header-footer/blob/nist-pages/boilerplate-footer.html -->
+      				<p>
+			          <a href="https://www.nist.gov/oism/site-privacy">Site Privacy</a>
+			        |
+			          <a href="https://www.nist.gov/oism/accessibility">Accessibility</a>
+			        |
+			          <a href="https://www.nist.gov/privacy">Privacy Program</a>
+			        |
+			          <a href="https://www.nist.gov/oism/copyrights">Copyrights</a>
+			        |
+			          <a href="https://www.commerce.gov/vulnerability-disclosure-policy">Vulnerability Disclosure</a>
+			        |
+			          <a href="https://www.nist.gov/no-fear-act-policy">No Fear Act Policy</a>
+			        |
+			          <a href="https://www.nist.gov/foia">FOIA</a>
+			        |
+			          <a href="https://www.nist.gov/environmental-policy-statement">Environmental Policy</a>
+					|
+			          <a href="https://www.nist.gov/summary-report-scientific-integrity">Scientific Integrity</a>
+			        |
+			          <a href="https://www.nist.gov/nist-information-quality-standards">Information Quality Standards</a>
+			        |
+			          <a href="https://www.commerce.gov/">Commerce.gov</a>
+			        |
+			          <a href="https://www.science.gov/">Science.gov</a>
+			        |
+			          <a href="https://www.usa.gov/">USA.gov</a>
+            		</p>
+    			</nav>
+			</div>
+		</div>
+	</footer>
+</body>
+</html>
