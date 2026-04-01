@@ -4,7 +4,7 @@ import hashlib
 import openai
 
 # Set your OpenAI API key
-openai.api_key = 'sk-EZDUV2rBv23pRIaqL0EI10AiDTmmVtvcnbjgAasHnRT3BlbkFJfQGSSg0OIM6BC5Sm_3CEpNgRkFEUwowvE6DJaL5gcA'  # Replace with your actual OpenAI API key
+openai.api_key = ''  # Replace with your actual OpenAI API key
 
 # Your existing functions
 
