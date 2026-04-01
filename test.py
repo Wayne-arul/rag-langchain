@@ -1,6 +1,6 @@
 import requests
 
-API_KEY = '55b1bc4558c219fad8f4fe0408eb2f32723ce1e7b067754468a44c1a4844a24e'  # Replace with your SerpAPI key
+API_KEY = ''  # Replace with your SerpAPI key
 
 # List of vulnerability keywords to search for
 keywords = [
