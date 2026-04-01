@@ -15,12 +15,12 @@ warnings.filterwarnings("ignore", category=UserWarning)
 warnings.filterwarnings("ignore", category=DeprecationWarning)
 
 # Set environment variables
-os.environ["OPENAI_API_KEY"] = "sk-EZDUV2rBv23pRIaqL0EI10AiDTmmVtvcnbjgAasHnRT3BlbkFJfQGSSg0OIM6BC5Sm_3CEpNgRkFEUwowvE6DJaL5gcA"
-os.environ["LANGCHAIN_API_KEY"] = "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"
-LANGCHAIN_API_KEY = "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"
+os.environ["OPENAI_API_KEY"] = ""
+os.environ["LANGCHAIN_API_KEY"] = ""
+LANGCHAIN_API_KEY = ""
 LANGCHAIN_TRACING_V2 = "true"
 
-API_KEY = '55b1bc4558c219fad8f4fe0408eb2f32723ce1e7b067754468a44c1a4844a24e'  # Replace with your SerpAPI key
+API_KEY = ''  # Replace with your SerpAPI key
 
 # Keywords to search for vulnerabilities
 keywords = [
