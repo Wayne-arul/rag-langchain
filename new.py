@@ -15,9 +15,9 @@ warnings.filterwarnings("ignore", category=UserWarning)
 warnings.filterwarnings("ignore", category=DeprecationWarning)
 
 
-os.environ["OPENAI_API_KEY"] = "sk-EZDUV2rBv23pRIaqL0EI10AiDTmmVtvcnbjgAasHnRT3BlbkFJfQGSSg0OIM6BC5Sm_3CEpNgRkFEUwowvE6DJaL5gcA"
-os.environ["LANGCHAIN_API_KEY"] = "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"
-LANGCHAIN_API_KEY = "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"
+os.environ["OPENAI_API_KEY"] = ""
+os.environ["LANGCHAIN_API_KEY"] = ""
+LANGCHAIN_API_KEY = ""
 LANGCHAIN_TRACING_V2 = "true"
 
 # Here we are Loading HTML data . Idhuve parse pannirum
